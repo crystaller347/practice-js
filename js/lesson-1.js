@@ -24,9 +24,39 @@
 // --------3---------
 // Наступна функція має повертати true, якщо параметр age більше чи дорівнює 18.
 
-const age = prompt("Enter your age");
-function userAge(age){
-    return age>=18;
-}
-console.log(userAge(age))
+// const age = prompt("Enter your age");
+// function userAge(age){
+//     return age>=18;
+// }
+// console.log(userAge(age))
 
+// ---------4-------
+// Оголоси функцію favoriteLanguage, яка буде повертати повідомлення
+// "I love <language>! I have been studying it for <years> years."
+// де language і years - це параметри, які очікує функція, мова (рядок)
+// і роки (число).
+
+// в результаті виклику функції в консолі має бути повідомлення:
+// console.log(favoriteLanguage("English", 15)); // "I love English! I have been studying it for 15 years."
+// console.log(favoriteLanguage("JavaScript", 3)); // "I love JavaScript! I have been studying it for 3 years."
+
+// function favoriteLanguage(
+//   language,
+//   years
+// ) {
+//   return `I love ${language}! I have been studying it for ${years} years.`;
+// }
+
+// console.log(
+//   favoriteLanguage("English", 15)
+// );
+
+// -----------5-----------
+// Введи значення в prompt і перевір чи є воно числом
+const answer = Number(
+  prompt("enter something")
+);
+
+console.log(
+  `${answer} - ${!Number.isNaN(answer)}`
+);
