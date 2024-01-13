@@ -68,7 +68,7 @@
 
 // const firstName = prompt("What is your name?");
 // const lastName = prompt("What is your surname?");
-// alert(`Hello ${firstName} ${lastName}`); 
+// alert(`Hello ${firstName} ${lastName}`);
 // confirm (`Hello ${firstName} ${lastName}`);
 
 
@@ -76,7 +76,38 @@
 // Напиши функцію randomInRange, яка буде приймати два числа (min, max) і повертати
 // випадкове число в діапазоні цих двох чисел
 
-function randomInRange (min, max) {
- return parseInt(Math.random() * (max - min + 1) + min); //Від мінімального значення до максимального |ВКЛЮЧНОО!!| 
- }
- console.log(randomInRange(100, 200))
+// function randomInRange (min, max) {
+//  return parseInt(Math.random() * (max - min + 1) + min); //Від мінімального значення до максимального |ВКЛЮЧНОО!!|
+//  }
+//  console.log(randomInRange(100, 200))
+
+// ---------7-------------
+// Попроси користувача ввести своє повідомлення в prompt.
+// Після чого виведи в консоль довжину цього повідомлення,
+// індекс останнього елемента в повідомленні і
+// останній елемент, приведений до верхнього регістру
+
+// const message = prompt("Enter your message")
+
+// const messageLength = message.length;
+// const messageLastIndex = message.length - 1;
+// const messageLastIndexUpperCase = message[messageLastIndex].toUpperCase();
+
+// console.log(messageLength, messageLastIndex, messageLastIndexUpperCase);
+
+// ----------9-----------
+// Запитуй у користувача число в prompt.
+// Створи функцію, яка буде приймати це число і возводити його в його ж ступінь
+// Функція має повертати рядок "<число> в ступені <число> дорівнює <число возведено в ступінь>"
+
+const number = prompt("Enter your number");
+
+function numberInDegree(number) {
+//   const numberW = number ** number;
+
+    const numberW = Math.pow(number, number);
+    return `${number} в ступені ${number} дорівнює ${numberW}`
+}
+
+console.log(numberInDegree(number));
+
