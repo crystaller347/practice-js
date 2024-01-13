@@ -61,7 +61,6 @@
 //   `${answer} - ${!Number.isNaN(answer)}`
 // );
 
-
 // ---------6-------------
 // Запитай користувача про його ім'я та прізвище,
 // а потім виведb вітання, об'єднуючи ці дані в один ряд
@@ -70,7 +69,6 @@
 // const lastName = prompt("What is your surname?");
 // alert(`Hello ${firstName} ${lastName}`);
 // confirm (`Hello ${firstName} ${lastName}`);
-
 
 // ----------8------------
 // Напиши функцію randomInRange, яка буде приймати два числа (min, max) і повертати
@@ -100,14 +98,42 @@
 // Створи функцію, яка буде приймати це число і возводити його в його ж ступінь
 // Функція має повертати рядок "<число> в ступені <число> дорівнює <число возведено в ступінь>"
 
-const number = prompt("Enter your number");
+// const number = prompt("Enter your number");
 
-function numberInDegree(number) {
-//   const numberW = number ** number;
+// function numberInDegree(number) {
+// //   const numberW = number ** number;
 
-    const numberW = Math.pow(number, number);
-    return `${number} в ступені ${number} дорівнює ${numberW}`
-}
+//     const numberW = Math.pow(number, number);
+//     return `${number} в ступені ${number} дорівнює ${numberW}`
+// }
 
-console.log(numberInDegree(number));
+// console.log(numberInDegree(number));
 
+// Питання:
+// ----------------------------------------------------
+
+// Який результат буде виведено в консоль?
+// console.log(typeof typeof 1);
+// typeof 1 = 'number
+// typeof typeof 1 = typeof 'number' = string
+
+// ------------------------------------------------------
+// Що відобразиться в консолі:
+// console.log(Number(undefined));
+
+// console.log("10" - 8 + true);
+// console.log(5 + 5 + "5");
+// ++++++++++++++++++++++++++++++++++++++++++
+
+// const a = 10;
+// function check() {
+//     const a = 20;
+//   console.log(a);
+// }
+// check(); //* 20
+
+// function check() {
+//   const a = 20;
+// }
+// check();
+// console.log(a);
