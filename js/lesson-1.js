@@ -53,10 +53,30 @@
 
 // -----------5-----------
 // Введи значення в prompt і перевір чи є воно числом
-const answer = Number(
-  prompt("enter something")
-);
+// const answer = Number(
+//   prompt("enter something")
+// );
 
-console.log(
-  `${answer} - ${!Number.isNaN(answer)}`
-);
+// console.log(
+//   `${answer} - ${!Number.isNaN(answer)}`
+// );
+
+
+// ---------6-------------
+// Запитай користувача про його ім'я та прізвище,
+// а потім виведb вітання, об'єднуючи ці дані в один ряд
+
+// const firstName = prompt("What is your name?");
+// const lastName = prompt("What is your surname?");
+// alert(`Hello ${firstName} ${lastName}`); 
+// confirm (`Hello ${firstName} ${lastName}`);
+
+
+// ----------8------------
+// Напиши функцію randomInRange, яка буде приймати два числа (min, max) і повертати
+// випадкове число в діапазоні цих двох чисел
+
+function randomInRange (min, max) {
+ return parseInt(Math.random() * (max - min + 1) + min); //Від мінімального значення до максимального |ВКЛЮЧНОО!!| 
+ }
+ console.log(randomInRange(100, 200))
