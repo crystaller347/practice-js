@@ -156,3 +156,16 @@
 // }
 // console.log(min(4, 10));
 // console.log(min(5, "two"));
+
+// напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
+const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+function sumNumber(array) {
+    const newArray = []
+    for (let index = 0; index < array.length-1; index++) {
+       newArray.push(array[index] +array[index+1]);
+        
+    }
+    return  newArray
+}
+console.log(sumNumber(someArr))
