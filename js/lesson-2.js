@@ -14,7 +14,6 @@
 
 // alert(answer ==="ECMAScript" ? "Вірно!" : "Не знаєте? ECMAScript!")
 
-
 //Напишіть цикл, який виводить в консоль
 //числа от max до min по зменьшенню
 //Виведіть в консоль суму усіх парних чисел
@@ -24,7 +23,7 @@
 // let total = 0;
 
 // for (let i=max; i>=min; i-=1) {
-    
+
 //  console.log(i);
 //     if (i % 2 === 0) {
 //         total += i;
@@ -71,7 +70,6 @@
 // }
 // console.log(`${num} - ${result}`)
 
-
 //Напишіть код, який буде питати
 //логін за допомогою prompt и логіровати результат
 //в консоль браузера
@@ -87,20 +85,44 @@
 //то вивести рядок "Вітаю!"
 //в іншому випадку виводити рядок "Невірний пароль!"
 
-const login = prompt("Enter login");
+// const login = prompt("Enter login");
 
-console.log(login);
+// console.log(login);
 
-if (login === "Адмін") {
-    const password = prompt("Enter password");
-    if (password === "Я головний") {
-        console.log("Вітаю!")
-    } else {
-        console.log("Невірний пароль!");
-    }
-} else if (login === "" || login === null) {
-    console.log("Скасовано")
-} else {
-    console.log("Я вас не знаю")
+// if (login === "Адмін") {
+//     const password = prompt("Enter password");
+//     if (password === "Я головний") {
+//         console.log("Вітаю!")
+//     } else {
+//         console.log("Невірний пароль!");
+//     }
+// } else if (login === "" || login === null) {
+//     console.log("Скасовано")
+// } else {
+//     console.log("Я вас не знаю")
+// }
+
+// Створіть масив styles з елементами 'Джаз' і 'Блюз'
+//Додайте в кінець 'Рок-н-ролл'
+//Заменіть значення 'Блюз' на 'Класика'
+
+// Напишіть функцію logItems (array), яка приймає
+// масив і використовує цикл for, який для кожного елемента
+//буде виводити повідомлення у форматі:
+//<номер елемента> - <значення елемента>
+//Нумерація має починатись з 1
+
+const styles = ["Джаз", "Блюз"];
+styles.push("Рок-н-ролл");
+const index = styles.indexOf("Блюз");
+if (index !== -1) {
+  styles[index] = "Класика";
 }
 
+function logItems(array) {
+  for (let i = 0; i <= array.length - 1; i += 1) {
+    console.log(`${i + 1}-${array[i]}`);
+  }
+}
+
+logItems(styles);
