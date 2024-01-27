@@ -50,23 +50,57 @@
 // значення '1', то у змінну result запишемо 'зима', якщо має значення
 // '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 
-const num = prompt("Enter number")
-let result = "";
-switch (Number(num)) {
-    case 1:
-        result = "зима"
-        break;
-    case 2:
-        result = "весна"
-        break;
-    case 3:
-        result = "літо"
-        break;
-    case 4:
-        result = "осінь"
-        break;
+// const num = prompt("Enter number")
+// let result = "";
+// switch (Number(num)) {
+//     case 1:
+//         result = "зима"
+//         break;
+//     case 2:
+//         result = "весна"
+//         break;
+//     case 3:
+//         result = "літо"
+//         break;
+//     case 4:
+//         result = "осінь"
+//         break;
 
-    default:
-        result = "Число повинно бути від 1 до 4";
+//     default:
+//         result = "Число повинно бути від 1 до 4";
+// }
+// console.log(`${num} - ${result}`)
+
+
+//Напишіть код, який буде питати
+//логін за допомогою prompt и логіровати результат
+//в консоль браузера
+
+//Якщо користувач вводить "Адмін",
+//то prompt запрашує пароль.
+//Якщо ничого не ввели чи нажата клавіша Esc
+//вивести строку "Скасовано"
+//В противному випадку вивести рядок "Я вас не знаю"
+
+//Пароль перевіряти так:
+//Якщо введен пароль "Я головний",
+//то вивести рядок "Вітаю!"
+//в іншому випадку виводити рядок "Невірний пароль!"
+
+const login = prompt("Enter login");
+
+console.log(login);
+
+if (login === "Адмін") {
+    const password = prompt("Enter password");
+    if (password === "Я головний") {
+        console.log("Вітаю!")
+    } else {
+        console.log("Невірний пароль!");
+    }
+} else if (login === "" || login === null) {
+    console.log("Скасовано")
+} else {
+    console.log("Я вас не знаю")
 }
-console.log(`${num} - ${result}`)
+
