@@ -112,17 +112,47 @@
 //<номер елемента> - <значення елемента>
 //Нумерація має починатись з 1
 
-const styles = ["Джаз", "Блюз"];
-styles.push("Рок-н-ролл");
-const index = styles.indexOf("Блюз");
-if (index !== -1) {
-  styles[index] = "Класика";
-}
+// const styles = ["Джаз", "Блюз"];
+// styles.push("Рок-н-ролл");
+// const index = styles.indexOf("Блюз");
+// if (index !== -1) {
+//   styles[index] = "Класика";
+// }
 
-function logItems(array) {
-  for (let i = 0; i <= array.length - 1; i += 1) {
-    console.log(`${i + 1}-${array[i]}`);
-  }
-}
+// function logItems(array) {
+//   for (let i = 0; i <= array.length - 1; i += 1) {
+//     console.log(`${i + 1}-${array[i]}`);
+//   }
+// }
 
-logItems(styles);
+// logItems(styles);
+
+// Напиши функцію, яка перебирає масив логінів і перевіряє
+// чи є ім'я введене в інпут у цьому масиві і у разі,
+// якщо є - виводить повідомлення "Доступ дозволено"
+// в іншому випадку - "Користувач не знайден"
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+
+// function checkLogin(array) {
+//   const login = prompt("enter login");
+//   if (array.includes(login)) {
+//     console.log("Доступ дозволено");
+//   } else {
+//     console.log("Користувач не знайден");
+//   }
+// }
+// checkLogin(logins);
+
+// Напишіть функцію min(a, b), яка повертає
+// меньше з чисел a, b
+//Додати перевірку, що функція отримує числа
+
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     return "Not a number";
+//   }
+//   return Math.min(a, b);
+// }
+// console.log(min(4, 10));
+// console.log(min(5, "two"));
