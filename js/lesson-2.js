@@ -158,14 +158,37 @@
 // console.log(min(5, "two"));
 
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
-const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
 
-function sumNumber(array) {
-    const newArray = []
-    for (let index = 0; index < array.length-1; index++) {
-       newArray.push(array[index] +array[index+1]);
+// function sumNumber(array) {
+//     const newArray = []
+//     for (let index = 0; index < array.length-1; index++) {
+//        newArray.push(array[index] +array[index+1]);
         
-    }
-    return  newArray
-}
-console.log(sumNumber(someArr))
+//     }
+//     return  newArray
+// }
+// console.log(sumNumber(someArr))
+
+
+
+//Напишіть функцію caclculateAverage()
+//яка приймає довільну кількість
+//аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+
+// function caclculateAverage () {
+
+//     const totalNumbers = arguments;
+//     let sumNumber = 0;
+//     let total = 0;
+//     for (const number of totalNumbers){
+         
+//         if (typeof number === "number") {
+//             sumNumber += number;   
+//             total += 1;
+//         }
+//     }
+//         return sumNumber/total;
+// }
+// console.log(caclculateAverage(1,2,3,4,5,6,7,"ololol"));
