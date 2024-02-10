@@ -199,40 +199,40 @@
 //remove(name) видаляє ім'я із колекції
 //update(oldName, newName) змінює ім'я на нове
 
-const names = ["Alla", "Petro", "Max", "Olena", "Boris"];
+// const names = ["Alla", "Petro", "Max", "Olena", "Boris"];
 
-function add(name) {
-    if (names.includes(name)) {
-        return "Користувач вже існує";
-    }
-    names.push(name)
-    return names;
-}
-console.log(add("Timur"))
-console.log(add("Timur"))
+// function add(name) {
+//     if (names.includes(name)) {
+//         return "Користувач вже існує";
+//     }
+//     names.push(name)
+//     return names;
+// }
+// console.log(add("Timur"))
+// console.log(add("Timur"))
 
 
-function remove(name) {
-    const index = names.indexOf(name)
-    if (index === -1) {
-        return "Користувач не знайденний";
+// function remove(name) {
+//     const index = names.indexOf(name)
+//     if (index === -1) {
+//         return "Користувач не знайденний";
         
-    }
-    names.splice(index, 1)
-    return names;
-}
-console.log(remove("Max"))
-console.log(remove("Richard"))
+//     }
+//     names.splice(index, 1)
+//     return names;
+// }
+// console.log(remove("Max"))
+// console.log(remove("Richard"))
 
-function update(oldName, newName) {
-    const index = names.indexOf(oldName);
-     if (index === -1) {
-        return "Користувач не знайденний";
+// function update(oldName, newName) {
+//     const index = names.indexOf(oldName);
+//      if (index === -1) {
+//         return "Користувач не знайденний";
         
-    }
-    // names.splice(index, 1, newName)
-    names[index] = newName;
-    return names;
-}
-console.log(update("Alla", "Sergei"))
-console.log(update("Alla", "Nast"))
+//     }
+//     // names.splice(index, 1, newName)
+//     names[index] = newName;
+//     return names;
+// }
+// console.log(update("Alla", "Sergei"))
+// console.log(update("Alla", "Nast"))
