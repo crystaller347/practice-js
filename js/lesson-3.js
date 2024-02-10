@@ -44,3 +44,78 @@
 // // console.log(calculator.read(10, 20));
 // console.log(calculator.sum());
 // console.log(calculator.mult());
+
+
+
+
+
+
+
+
+
+
+
+//5. Напишіть скрипт керування особистим кабінетом інтернет банка
+//Є об'єкт account в якому необхідно реалізувати
+//методи для работи з балансом та історією транзакцій
+
+//Типів транзакцій всього два.
+//Можна покласти або зняти гроші з рахунка
+const Transaction = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+
+//Кожна транзакція це об'єкт з властивостями id, type, amount
+
+const account = {
+  //поточний баланс рахунка
+  balance: 0,
+
+  //Історія транзакцій
+  transactions: [],
+
+  //Метод створює і повертає об'єкт транзакцій
+  //Приймає сумму і тип транзакцій
+  createTransaction(type, amount) {
+    return {
+      type,
+      amount,
+    };
+  },
+//Метод відповідає за додавання сумми к балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає його в історію транзакцій
+  deposit(amount) {
+    this.balance += amount;
+    const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+    this.transactions.push({...transaction, id: Math.random()});
+  },
+
+  //Метод відповідає за зняття сумми з балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає йогого в історю транзакцій
+  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+  //що недостатньо коштів на рахунку
+  withdraw(amount) {
+    if (amount > this.balance)
+    return console.log('Not anouth money');
+    this.balance -= amount;
+    const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+    this.transactions.push({...transaction, id: Math.random()});
+  },
+
+  //Метод повертає поточний баланс
+  getBalance() {
+    return `You have ${this.balance} moneys`
+  },
+
+  //Метод шукає і повертає об'єкт транзакціи по id
+  getTransactionDetails(id) {},
+
+  //Метод повертає кількіств коштів вказаного типу
+  //транзакціи зі всієї історії транзакцій
+  getTransactionType(type) {},
+}
