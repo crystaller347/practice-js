@@ -161,7 +161,13 @@ const users = [
     friends: ["Briana Decker", "Sharron Pace"],
     isActive: true,
     balance: 3821,
-    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    skills: [
+      "tempor",
+      "mollit",
+      "commodo",
+      "veniam",
+      "laborum",
+    ],
     gender: "female",
     age: 34,
   },
@@ -170,7 +176,11 @@ const users = [
     name: "Ross Vazquez",
     email: "rossvazquez@xinware.com",
     eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    friends: [
+      "Marilyn Mcintosh",
+      "Padilla Garrison",
+      "Naomi Buckner",
+    ],
     isActive: false,
     balance: 3793,
     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
@@ -258,12 +268,49 @@ const users = [
 // Task 3
 
 // Отримати масив імен користувачів по полю (поле gender)
-console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
-function getUsersWithGender(array, gender){
-    // return array.filter((user) =>user.gender === gender).map(user => user.name)
+// function getUsersWithGender(array, gender){
+//     // return array.filter((user) =>user.gender === gender).map(user => user.name)
 
-    return array.reduce((userNames, user) =>  user.gender === gender ? [...userNames,user.name]:userNames
-    ,[])
-}
+//     return array.reduce((userNames, user) =>  user.gender === gender ? [...userNames,user.name]:userNames
+//     ,[])
+// }
 
+// Task 4
+
+// Отримати масив всіх навичок усіх користувачів (поле skills), при цьому не повинно бути
+// повторювань навичок і вони мають бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+// function getSortedUniqueSkills(array) {
+//   return array
+//     .flatMap((user) => user.skills)
+//     .filter(
+//       (skill, index, arr) => arr.indexOf(skill) === index
+//     )
+//     .toSorted((a, b) => a.localeCompare(b));
+// }
+
+// Task 6
+
+//Створити статистику - об'єкт, у якому вказується кількість тегів
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+const statistyc = {};
+tweets
+  .flatMap((tweet) => tweet.tags)
+  .forEach((tag) => {
+    if (statistyc[tag]) statistyc[tag] += 1;
+    else statistyc[tag] = 1;
+    console.log(statistyc);
+  });
+
+console.log(statistyc);
