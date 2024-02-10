@@ -62,60 +62,90 @@
 //Типів транзакцій всього два.
 //Можна покласти або зняти гроші з рахунка
 const Transaction = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw",
+    DEPOSIT: "deposit",
+    WITHDRAW: "withdraw",
 };
 
 //Кожна транзакція це об'єкт з властивостями id, type, amount
 
 const account = {
-  //поточний баланс рахунка
-  balance: 0,
+    //поточний баланс рахунка
+    balance: 0,
 
-  //Історія транзакцій
-  transactions: [],
+    //Історія транзакцій
+    transactions: [],
 
-  //Метод створює і повертає об'єкт транзакцій
-  //Приймає сумму і тип транзакцій
-  createTransaction(type, amount) {
-    return {
-      type,
-      amount,
-    };
-  },
-//Метод відповідає за додавання сумми к балансу.
-  //Приймає сумму транзакціи.
-  //Визиває createTransaction для створення об'єкта транзакціи
-  //після чого додає його в історію транзакцій
-  deposit(amount) {
-    this.balance += amount;
-    const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
-    this.transactions.push({...transaction, id: Math.random()});
-  },
+    //Метод створює і повертає об'єкт транзакцій
+    //Приймає сумму і тип транзакцій
+    createTransaction(type, amount) {
+        return {
+            type,
+            amount,
+        };
+    },
+    //Метод відповідає за додавання сумми к балансу.
+    //Приймає сумму транзакціи.
+    //Визиває createTransaction для створення об'єкта транзакціи
+    //після чого додає його в історію транзакцій
+    deposit(amount) {
+        this.balance += amount;
+        const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+        this.transactions.push({...transaction, id: Math.random() });
+    },
 
-  //Метод відповідає за зняття сумми з балансу.
-  //Приймає сумму транзакціи.
-  //Визиває createTransaction для створення об'єкта транзакціи
-  //після чого додає йогого в історю транзакцій
-  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
-  //що недостатньо коштів на рахунку
-  withdraw(amount) {
-    if (amount > this.balance)
-    return console.log('Not anouth money');
-    this.balance -= amount;
-    const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
-    this.transactions.push({...transaction, id: Math.random()});
-  },
+    //Метод відповідає за зняття сумми з балансу.
+    //Приймає сумму транзакціи.
+    //Визиває createTransaction для створення об'єкта транзакціи
+    //після чого додає йогого в історю транзакцій
+    //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+    //що недостатньо коштів на рахунку
+    withdraw(amount) {
+        if (amount > this.balance)
+            return console.log('Not anouth money');
+        this.balance -= amount;
+        const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+        this.transactions.push({...transaction, id: 1 });
+    },
 
-  //Метод повертає поточний баланс
-  getBalance() {
-    return `You have ${this.balance} moneys`
-  },
+    //Метод повертає поточний баланс
+    getBalance() {
+        return `You have ${this.balance} moneys`
+    },
 
-  //Метод шукає і повертає об'єкт транзакціи по id
-  getTransactionDetails(id) {},
+    //Метод шукає і повертає об'єкт транзакціи по id
+    getTransactionDetails(id) {
+        const transaction = this.transactions.find(item => item.id === id)
+        if (transaction)
+            return transaction;
+        return "Transaction not found!"
+    },
 
-  //Метод повертає кількіств коштів вказаного типу
-  //транзакціи зі всієї історії транзакцій
-  getTransactionType(type) {},
+    //Метод повертає кількіств коштів вказаного типу
+    //транзакціи зі всієї історії транзакцій
+    getTransactionType(type) {
+        let total = 0
+            // for (const transaction of this.transactions) {
+            //     if (transaction.type === type) {
+            //         total += transaction.amount
+            //     }
+            // }
+        this.transactions.forEach(transaction => {
+            if (transaction.type === type) {
+                total += transaction.amount
+            }
+        });
+        return total
+    },
 }
+
+account.deposit(300)
+account.deposit(1200)
+account.deposit(211)
+account.withdraw(21100)
+account.withdraw(111)
+
+console.log(account.getTransactionDetails(1))
+console.log(account.getTransactionType(Transaction.DEPOSIT))
+
+console.log(account)
+console.log(account.getBalance())
