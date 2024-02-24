@@ -5,7 +5,6 @@
 // get getClientData() має повертати об'єкт з переліченими властивостями
 // set changeEmail(newEmail) перезаписує пошту користувача
 
-
 // class Client {
 //     #login;
 //     #email;
@@ -31,7 +30,6 @@
 // const newClient = new Client("client", "dfghj@dfgh");
 // newClient.changeEmail = "ertyu@df";
 // console.log(newClient.getClientData)
-
 
 //3. Напиши класс Notes який управляє коллекцієй нотаток у
 //властивості items.
@@ -70,7 +68,6 @@
 
 // console.log(notes);
 
-
 // Створити список
 // Створити кнопки Add, Remove, які будуть змінювати склад списку
 // Створити input, з якого отримаємо значення, що буде передано в li
@@ -108,12 +105,6 @@
 //   lastItem.remove();
 // }
 
-
-
-
-
-
-
 //TODO: Створити невелику гру
 // Спочатку на екрані з'являється якась фігура рандомного коліру в рандомному місті
 // Натискаючі на фігуру, вона змінює свою форму, колір, місце розташування
@@ -134,7 +125,6 @@
 //   return Math.floor(Math.random() * max);
 // }
 
-
 // const figure = document.createElement("div");
 
 // handleClick();
@@ -151,36 +141,48 @@
 // figure.style.left = `${randomither(100)}%`;
 // }
 
-
 // Створити червоний квадрат розміром 50 на 50 рх
 // Додати кнопку "Зменшити", яка робить квадрат менше на 10 пікселів
 // Додати кнопку "Збільшити", яка робить його більше на 10 пікселів.
 
-let size =50
-const squer =   `<div style="width:${size}px; height: ${size}px; background:red" class="box">
-</div>
-<button type="button" class="bigsize">make lager box</button>
-<button type="button" class="lesssize">make smaler box</button>`
+// let size =50
+// const squer =   `<div style="width:${size}px; height: ${size}px; background:red" class="box">
+// </div>
+// <button type="button" class="bigsize">make lager box</button>
+// <button type="button" class="lesssize">make smaler box</button>`
 
-document.body.insertAdjacentHTML("afterbegin", squer);
-const biger = document.querySelector(".bigsize");
-const smoler = document.querySelector(".lesssize");
-const box = document.querySelector(".box");
+// document.body.insertAdjacentHTML("afterbegin", squer);
+// const biger = document.querySelector(".bigsize");
+// const smoler = document.querySelector(".lesssize");
+// const box = document.querySelector(".box");
 
-biger.addEventListener("click", bigerSize);
-smoler.addEventListener("click", smolerSize);
+// biger.addEventListener("click", bigerSize);
+// smoler.addEventListener("click", smolerSize);
 
+// function  bigerSize() {
+//    size +=10;
+//    box.style.width =`${size}px`;
+//    box.style.height =`${size}px`;
+// }
 
-function  bigerSize() {
-   size +=10;
-   box.style.width =`${size}px`;
-   box.style.height =`${size}px`;
+// function  smolerSize() {
+//     if(size<=10) return
+//     size -=10;
+//     box.style.width =`${size}px`;
+//     box.style.height =`${size}px`;
+
+//  }
+
+/*
+Завдання 6
+Натиснувши кнопку "Подвоювати", збільшити значення
+у кожному елементі списку у 2 рази
+*/
+const listItems = document.querySelectorAll(".listItem");
+const button = document.querySelector("#double");
+
+button.addEventListener("click", doubleItems);
+
+function doubleItems() {
+  listItems.forEach((listItem) => (listItem.textContent *= 2));
 }
-
-function  smolerSize() {
-    if(size<=10) return  
-    size -=10;
-    box.style.width =`${size}px`;
-    box.style.height =`${size}px`;
-
- }
