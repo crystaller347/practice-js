@@ -150,3 +150,37 @@
 // figure.style.top = `${randomither(100)}%`;
 // figure.style.left = `${randomither(100)}%`;
 // }
+
+
+// Створити червоний квадрат розміром 50 на 50 рх
+// Додати кнопку "Зменшити", яка робить квадрат менше на 10 пікселів
+// Додати кнопку "Збільшити", яка робить його більше на 10 пікселів.
+
+let size =50
+const squer =   `<div style="width:${size}px; height: ${size}px; background:red" class="box">
+</div>
+<button type="button" class="bigsize">make lager box</button>
+<button type="button" class="lesssize">make smaler box</button>`
+
+document.body.insertAdjacentHTML("afterbegin", squer);
+const biger = document.querySelector(".bigsize");
+const smoler = document.querySelector(".lesssize");
+const box = document.querySelector(".box");
+
+biger.addEventListener("click", bigerSize);
+smoler.addEventListener("click", smolerSize);
+
+
+function  bigerSize() {
+   size +=10;
+   box.style.width =`${size}px`;
+   box.style.height =`${size}px`;
+}
+
+function  smolerSize() {
+    if(size<=10) return  
+    size -=10;
+    box.style.width =`${size}px`;
+    box.style.height =`${size}px`;
+
+ }
