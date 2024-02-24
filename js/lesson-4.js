@@ -77,34 +77,76 @@
 // Парним лі вказати жовтий фон, непарним синій
 // Використовуй createElement
 
-const list = document.createElement("ol");
-const btnAdd = document.createElement("button");
-const btnRemove = document.createElement("button");
-const input = document.createElement("input");
+// const list = document.createElement("ol");
+// const btnAdd = document.createElement("button");
+// const btnRemove = document.createElement("button");
+// const input = document.createElement("input");
 
-btnAdd.textContent = "Add text";
-btnRemove.textContent = "Remove text";
+// btnAdd.textContent = "Add text";
+// btnRemove.textContent = "Remove text";
 
-document.body.append(input, btnAdd, btnRemove, list);
+// document.body.append(input, btnAdd, btnRemove, list);
 
-btnAdd.addEventListener("click", addText);
-btnRemove.addEventListener("click", removeText);
+// btnAdd.addEventListener("click", addText);
+// btnRemove.addEventListener("click", removeText);
 
-function addText () {
-  const inputValue = input.value.trim();
-  if (inputValue === "") return alert("Необхідно ввести текст!");
-  const item = document.createElement("li");
-  item.textContent = inputValue;
-  list.append(item);
-  input.value = "";
-  // if (list.children.length % 2 === 0) { item.style.backgroundColor = "yellow" }
-  // else { item.style.backgroundColor = "blue" };
-  item.style.backgroundColor = list.children.length % 2 === 0 ? "yellow" : "blue";
-}
+// function addText () {
+//   const inputValue = input.value.trim();
+//   if (inputValue === "") return alert("Необхідно ввести текст!");
+//   const item = document.createElement("li");
+//   item.textContent = inputValue;
+//   list.append(item);
+//   input.value = "";
+//   // if (list.children.length % 2 === 0) { item.style.backgroundColor = "yellow" }
+//   // else { item.style.backgroundColor = "blue" };
+//   item.style.backgroundColor = list.children.length % 2 === 0 ? "yellow" : "blue";
+// }
 
-function removeText() {
-  const lastItem = list.lastChild;
-  if(lastItem)
-  lastItem.remove();
-}
+// function removeText() {
+//   const lastItem = list.lastChild;
+//   if(lastItem)
+//   lastItem.remove();
+// }
 
+
+
+
+
+
+
+//TODO: Створити невелику гру
+// Спочатку на екрані з'являється якась фігура рандомного коліру в рандомному місті
+// Натискаючі на фігуру, вона змінює свою форму, колір, місце розташування
+
+// const forms = [
+//   "width: 100px; height: 100px; border-width: 1px;",
+//   "width: 100px; height: 100px; border-radius: 50%;",
+//   "width: 150px; height: 100px; border-width: 1px;",
+//   "width: 200px; height: 100px; border-radius: 100px / 50px; ",
+//   "width: 150px; height: 100px; transform: skew(20deg)",
+// ];
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+
+// function randomither(max) {
+//   return Math.floor(Math.random() * max);
+// }
+
+
+// const figure = document.createElement("div");
+
+// handleClick();
+
+// document.body.append(figure);
+
+// figure.addEventListener("click", handleClick);
+
+// function handleClick() {
+// figure.style.cssText = forms[randomither(forms.length)];
+// figure.style.backgroundColor = getRandomHexColor();
+// figure.style.position = "absolute";
+// figure.style.top = `${randomither(100)}%`;
+// figure.style.left = `${randomither(100)}%`;
+// }
