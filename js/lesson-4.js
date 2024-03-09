@@ -178,11 +178,11 @@
 Натиснувши кнопку "Подвоювати", збільшити значення
 у кожному елементі списку у 2 рази
 */
-const listItems = document.querySelectorAll(".listItem");
-const button = document.querySelector("#double");
+// const listItems = document.querySelectorAll(".listItem");
+// const button = document.querySelector("#double");
 
-button.addEventListener("click", doubleItems);
+// button.addEventListener("click", doubleItems);
 
-function doubleItems() {
-  listItems.forEach((listItem) => (listItem.textContent *= 2));
-}
+// function doubleItems() {
+//   listItems.forEach((listItem) => (listItem.textContent *= 2));
+// }
